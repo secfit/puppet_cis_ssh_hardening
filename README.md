@@ -20,7 +20,7 @@ This module automatically configures the following aspects for SSH security comp
 
 ## Requirements
 
-- Puppet >= 6.0
+- Puppet >= 8
 - AlmaLinux 8 (or compatible OS)
 - `augeas` installed on the target system
 
