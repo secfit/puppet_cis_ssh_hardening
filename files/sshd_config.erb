@@ -1,0 +1,21 @@
+# SSH Configuration for CIS AlmaLinux 8 Benchmark
+
+PermitRootLogin no
+PasswordAuthentication no
+ChallengeResponseAuthentication no
+UsePAM yes
+AllowUsers root
+ClientAliveInterval 300
+ClientAliveCountMax 0
+MaxAuthTries 3
+MaxSessions 10
+LogLevel VERBOSE
+LoginGraceTime 1m
+MaxStartups 10:30:100
+PermitEmptyPasswords no
+HostbasedAuthentication no
+IgnoreRhosts yes
+KexAlgorithms curve25519-sha256@libssh.org,ecdh-sha2-nistp256,ecdh-sha2-nistp384,ecdh-sha2-nistp521
+Ciphers aes256-ctr,aes192-ctr,aes128-ctr
+MACs hmac-sha2-512,hmac-sha2-256,hmac-ripemd160
+Banner /etc/issue.net
