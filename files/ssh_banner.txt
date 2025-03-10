@@ -1,0 +1,6 @@
+
+ ********************************************************************************
+* WARNING: Unauthorized access is prohibited. All activity is logged and       *
+* monitored. Any attempt to access this system without proper authorization    *
+* will result in legal action.                                                *
+********************************************************************************
