@@ -30,7 +30,7 @@ To install and use this module:
 
 1. Clone the repository to your Puppet module directory:
     ```bash
-    git clone https://github.com/your_username/cis_ssh_hardening.git /etc/puppetlabs/code/environments/production/modules/cis_ssh_hardening
+    git clone https://github.com/secfit/puppet_cis_ssh_hardening.git /etc/puppetlabs/code/environments/production/modules/cis_ssh_hardening
     ```
 
 2. Validate the Puppet module:
