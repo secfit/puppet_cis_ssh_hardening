@@ -54,7 +54,6 @@ To install and use this module:
 
 - `cis_ssh_hardening::permissions`: Configures file permissions for SSH files.
 - `cis_ssh_hardening::sshd_config`: Configures SSHD settings in `/etc/ssh/sshd_config`.
-- `cis_ssh_hardening::crypto_policy`: Disables SSH crypto policies.
 
 ## Files
 
