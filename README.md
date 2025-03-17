@@ -1,22 +1,16 @@
-# CIS SSH Hardening Puppet Module
+# Puppet Linux Hardening
 
-This Puppet module applies the **CIS AlmaLinux 8 SSH Hardening Benchmark (v3.0)**. It ensures the proper configuration and permissions of SSH-related files, SSHD settings, and more.
+This Puppet module applies the **CIS AlmaLinux 8 SSH Hardening Benchmark (v3.0)**. It includes configurations for SSH security, cron job management, PAM settings, sudo policies, and password policies.
 
-## Overview
+## Features
 
 This module automatically configures the following aspects for SSH security compliance:
 
-- **Permissions on SSH files**:
-  - Ensures correct permissions for `/etc/ssh/sshd_config`, SSH private keys, and public keys.
-  
-- **SSHD Configuration**:
-  - Configures key SSHD settings, including:
-    - `PermitRootLogin`, `PasswordAuthentication`, `UsePAM`, `ClientAliveInterval`, etc.
-    - Ensures strong cipher suites, MACs, and KexAlgorithms.
-    - Configures login grace time, max retries, and max sessions.
-  
-- **Crypto Policy**:
-  - Disables SSH crypto policies that are not compliant with CIS.
+- **SSH Hardening**, `linux_hardening::ssh`: Ensures secure permissions and configurations for SSH.
+- **Cron Security**, `linux_hardening::cron`: Restricts access to cron jobs.
+- **Sudo Policy Enforcement**, `linux_hardening::sudo`: Ensures sudo is installed and configured securely.
+- **PAM Configuration**, `linux_hardening::pam`: Enhances authentication security.
+- **Password Policy Management** `linux_hardening::password_policy`: Enforces strong password policies.
 
 ## Requirements
 
@@ -30,12 +24,12 @@ To install and use this module:
 
 1. Clone the repository to your Puppet module directory:
     ```bash
-    git clone https://github.com/secfit/puppet_cis_ssh_hardening.git /etc/puppetlabs/code/environments/production/modules/cis_ssh_hardening
+    git clone https://github.com/secfit/linux_hardening.git /etc/puppetlabs/code/environments/production/modules/linux_hardening
     ```
 
 2. Validate the Puppet module:
     ```bash
-    puppet parser validate /etc/puppetlabs/code/environments/production/modules/cis_ssh_hardening/manifests/init.pp
+    puppet parser validate /etc/puppetlabs/code/environments/production/modules/linux_hardening/manifests/init.pp
     ```
 
 3. Include the module in your Puppet configuration (`/etc/puppetlabs/code/environments/production/manifests/site.pp`):
@@ -44,8 +38,13 @@ To install and use this module:
       include linux_hardening
     }
     ```
-
-4. Apply the configuration:
+    
+4. Apply the Puppet manifest :
+    ```puppet
+    puppet apply /etc/puppetlabs/code/environments/production/manifests/site.pp
+    ```
+    
+5. Apply the configuration:
     ```bash
     puppet agent -t
     ```
@@ -54,13 +53,6 @@ To install and use this module:
 
 - `cis_ssh_hardening::permissions`: Configures file permissions for SSH files.
 - `cis_ssh_hardening::sshd_config`: Configures SSHD settings in `/etc/ssh/sshd_config`.
-
-## Files
-
-- **/etc/ssh/sshd_config**: The SSHD configuration file.
-- **/etc/ssh/ssh_host_*_key**: The SSH private host key files.
-- **/etc/ssh/ssh_host_*_key.pub**: The SSH public host key files.
-- **/etc/issue.net**: SSH login banner.
 
 ## License
 
