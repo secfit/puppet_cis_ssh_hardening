@@ -6,11 +6,11 @@ This Puppet module applies the **CIS AlmaLinux 8 SSH Hardening Benchmark (v3.0)*
 
 This module automatically configures the following aspects for SSH security compliance:
 
-- **SSH Hardening**, `linux_hardening::ssh`: Ensures secure permissions and configurations for SSH.
-- **Cron Security**, `linux_hardening::cron`: Restricts access to cron jobs.
-- **Sudo Policy Enforcement**, `linux_hardening::sudo`: Ensures sudo is installed and configured securely.
-- **PAM Configuration**, `linux_hardening::pam`: Enhances authentication security.
-- **Password Policy Management** `linux_hardening::password_policy`: Enforces strong password policies.
+- **SSH Hardening** : Ensures secure permissions and configurations for SSH.
+- **Cron Security** : Restricts access to cron jobs.
+- **Sudo Policy Enforcement** : Ensures sudo is installed and configured securely.
+- **PAM Configuration** : Enhances authentication security.
+- **Password Policy Management** : Enforces strong password policies.
 
 ## Requirements
 
@@ -51,8 +51,11 @@ To install and use this module:
 
 ## Class Reference
 
-- `cis_ssh_hardening::permissions`: Configures file permissions for SSH files.
-- `cis_ssh_hardening::sshd_config`: Configures SSHD settings in `/etc/ssh/sshd_config`.
+- `linux_hardening::ssh`
+- `linux_hardening::cron`
+- `linux_hardening::sudo`
+- `linux_hardening::pam`
+- `linux_hardening::password_policy`
 
 ## License
 
