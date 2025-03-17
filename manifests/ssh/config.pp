@@ -5,7 +5,7 @@ class linux_hardening::ssh::config {
     mode    => '0600',
     owner   => 'root',
     group   => 'root',
-    content => template('linux_hardening/sshd_config.erb'),
+    content => template('linux_hardening/files/sshd_config.erb'),
     notify  => Service['sshd'],
   }
 
@@ -20,6 +20,6 @@ class linux_hardening::ssh::config {
     mode    => '0644',
     owner   => 'root',
     group   => 'root',
-    content => file('linux_hardening/ssh_banner.txt'),
+    content => file('linux_hardening/files/ssh_banner.txt'),
   }
 }
