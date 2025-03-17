@@ -41,7 +41,7 @@ To install and use this module:
 3. Include the module in your Puppet configuration (`/etc/puppetlabs/code/environments/production/manifests/site.pp`):
     ```puppet
     node default {
-      include cis_ssh_hardening
+      include linux_hardening
     }
     ```
 
